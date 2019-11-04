@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import BarHeader from './components/BarHeader/barHeader';
-import TabViewExample from './components/TabHeader/tabHeader';
+import Navegacion from './components/Navegacion/navegacion';
 
 const theme = {
   ...DefaultTheme,
@@ -16,8 +15,7 @@ const theme = {
 export default function App() {
   return (
     <PaperProvider theme={theme}>
-      <BarHeader />
-      <TabViewExample />
+      <Navegacion />
     </PaperProvider>
   );
 }
