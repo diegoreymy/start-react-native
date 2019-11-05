@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import Button from "react-native-button";
 import { AppStyles } from "../AppStyles";
+const FBSDK = require("react-native-fbsdk");
+const { LoginManager, AccessToken } = FBSDK;
 
 
 class LoginScreen extends React.Component {
@@ -19,7 +21,21 @@ class LoginScreen extends React.Component {
   };
 
   onPressFacebook = () => {
-    console.log("facebook");
+    LoginManager.logInWithPermissions(["public_profile"]).then(
+        function(result) {
+          if (result.isCancelled) {
+            console.log(result);
+          } else {
+            console.log(
+              "Login success with permissions: " +
+                result.grantedPermissions.toString()
+            );
+          }
+        },
+        function(error) {
+          console.log("Login fail with error: " + error);
+        }
+      );
   };
 
   render() {
