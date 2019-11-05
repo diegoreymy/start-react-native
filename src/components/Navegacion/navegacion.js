@@ -56,7 +56,7 @@ const Screen2_StackNavigator = createStackNavigator({
     }),
   },
 });
- 
+
 const DrawerNavigatorExample = createDrawerNavigator({
   //Drawer Optons and indexing
   Screen1: {

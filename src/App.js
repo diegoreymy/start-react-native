@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Navegacion from './components/Navegacion/navegacion';
+import Login from './pages/login';
 
 const theme = {
   ...DefaultTheme,
@@ -12,10 +13,12 @@ const theme = {
   },
 };
 
+const token = false;
+
 export default function App() {
   return (
     <PaperProvider theme={theme}>
-      <Navegacion />
+      { token ? <Navegacion /> : <Login /> }
     </PaperProvider>
   );
 }
